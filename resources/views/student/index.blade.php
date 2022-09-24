@@ -10,7 +10,7 @@
 <body>
     <div class="container">
     <h1>Index View Name</h1>
-    <a href="name/create" class="btn btn-primary">Tambah Kelas</a>
+    <a href="student/create" class="btn btn-primary">Tambah Kelas</a>
 <table class="table table-striped">
   <thead>
     <tr>
@@ -22,7 +22,7 @@
     </tr>
   </thead>
   <tbody>
-        @foreach ($names as $no=>$item)
+        @foreach ($students as $no=>$item)
         <tr>
         <td>{{ ++$no }}</td>
         <td>{{ $item->name }}</td>
@@ -30,8 +30,8 @@
         <td>{{ $item->age  }}</td>
         <td>
     
-        <form action="{{ route('name.destroy', $item->id) }}" onsubmit="return confirm('Apakah Anda Yakin?')" method="POST">
-        <a class="btn btn-primary" href="{{ route('name.edit', $item->id) }}">Edit</a>
+        <form action="{{ route('student.destroy', $item->id) }}" onsubmit="return confirm('Apakah Anda Yakin?')" method="POST">
+        <a class="btn btn-primary" href="{{ route('student.edit', $item->id) }}">Edit</a>
          @csrf
          @method('DELETE')
          <button type="submit" class="btn btn-danger">Delete</button>

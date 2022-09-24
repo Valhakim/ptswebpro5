@@ -4,18 +4,18 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Student;
-
+// Muhammad Fadel FH
 class StudentController extends Controller
 {
     public function index()
     {
-        $names=Student::All();
-        return view('students.index', compact('student'));
+        $students=Student::All();
+        return view('student.index', compact('students'));
     }
     
     public function create()
     {
-        return view('names/create');
+        return view('student/create');
     }
     
     public function store (Request $request)
@@ -28,29 +28,29 @@ class StudentController extends Controller
         
         Student::create($request->all());
 
-        return redirect()->route('name.index')->with('success', 'Berhaslil menambahkan.');
+        return redirect()->route('student.index')->with('success', 'Berhaslil menambahkan.');
     }
 
-    public function edit(Student $name)
+    public function edit(Student $student)
     {
-        return view('names.edit',compact('name'));
+        return view('student.edit',compact('student'));
     }
 
-    public function update(Request $request, Student $name)
+    public function update(Request $request, Student $student)
     {
         $request->validate([
             'name' => 'required',
             'gender' => 'required',
             'age' => 'required',
         ]);
-        $name->update($request->all());
-        return redirect()->route('name.index')->with('success','Berhasil mengupdate');
+        $student->update($request->all());
+        return redirect()->route('student.index')->with('success','Berhasil mengupdate');
     }
     
-    public function destroy(Student $name)
+    public function destroy(Student $student)
     {
-        $name->delete();
+        $student->delete();
     
-        return redirect()->route('name.index')->with('success','Berhasil menghapus');
+        return redirect()->route('student.index')->with('success','Berhasil menghapus');
     }
 }

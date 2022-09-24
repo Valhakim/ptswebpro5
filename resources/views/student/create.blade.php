@@ -10,7 +10,7 @@
 <body>
     <div class="container">
     <h1>Add Data</h1>
-    <form action="{{ route('name.store') }}" method="post">
+    <form action="{{ route('student.store') }}" method="post">
       @csrf
     <div class="mb-2">
           <input type="text"name="name" class="form-control" placeholder="Name">

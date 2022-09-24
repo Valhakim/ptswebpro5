@@ -25,19 +25,19 @@
             </div>
         @endif
         <div>
-            <form action="{{ route('name.update', $name->id) }}" method="POST">
+            <form action="{{ route('student.update', $student->id) }}" method="POST">
                 @csrf
                 @method('PUT')
                 <div class="mb-2">
-                    <input type="text" name="name" class="form-control" value="{{ $name->name }}"
+                    <input type="text" name="name" class="form-control" value="{{ $student->name }}"
                         placeholder="Name">
                 </div>
                 <div class="mb-2">
-                    <input type="text" name="gender" class="form-control" value="{{ $name->gender }}"
+                    <input type="text" name="gender" class="form-control" value="{{ $student->gender }}"
                         placeholder="Gender">
                 </div>
                 <div class="mb-2">
-                    <input type="number" name="age" class="form-control" value="{{ $name->age }}"
+                    <input type="number" name="age" class="form-control" value="{{ $student->age }}"
                         placeholder="Age">
                 </div>
                 <div class="mb-2">
